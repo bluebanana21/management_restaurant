@@ -62,3 +62,5 @@ Route::get('/dashboard/category/createCategory', function () {
 })->name('dashboard.show.addCategory')->middleware('auth');
 
 Route::post('/dashboard/category/createCategory', [CategoryController::class, 'storeCategory'])->name('dashboard.post.addCategory')->middleware('auth');
+
+Route::get('/dashboard/category/delete/{id}', [CategoryController::class, 'delete']);

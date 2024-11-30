@@ -32,13 +32,12 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function delete(Category $category)
+    public function delete($id)
     {
 
-        Category::destroy($category->id);
-        return view('dashboard.category', [
-            'categories' => Category::all()
-        ]);
+        $categories = Category::find($id);
+        $categories->delete();
+        return to_route('get.category');
 
     }
 

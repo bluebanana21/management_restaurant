@@ -35,14 +35,15 @@
                         <a href="" class="badge bg-info">
                             <i class="fa-solid fa-pencil"></i>
                         </a>
-                        <form action="{{ route('dashboard.delete.Category') }}" class="d-inline">
 
-                            @csrf
-                            <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')">
+
+                        <a href="{{ url('/dashboard/category/delete/'.$category->id) }}">
+
+                            <button class="badge bg-danger border-0">
                                 <i class="fa-solid fa-trash"></i>
-
                             </button>
-                        </form>
+                        </a>
+
 
                     </td>
                 </tr>
