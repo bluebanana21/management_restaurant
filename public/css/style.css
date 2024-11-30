@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "InsaniBurger";
+
+}
+
+@font-face {
+    font-family: InsaniBurger;
+    src: url("{{ public_path(' fonts/Insanibu.tff') }}");
+}
+
+#side-nav {
+    height: 100vh;
+    overflow-y: auto;
+    background-color: #3F3C5E;
+}
+
+
+#blue-nav {
+    background-color: #3F3C5E;
+    color: #3F3C5E;
+}
+
+#yellow-logo {
+    color: #FFB700;
+}
+
+#no-decor-text {
+    text-decoration: none;
+}
