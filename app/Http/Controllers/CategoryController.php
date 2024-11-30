@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
 
-
     //Category stuff
     public function storeCategory(Request $request)
     {
@@ -18,8 +17,6 @@ class CategoryController extends Controller
         $validatedData = $request->validate([
             'category_name' => ['required', 'unique:categories'],
             'created_by' => ['required'],
-            'slug' => ['required']
-
         ]);
 
         Category::create($validatedData);
@@ -29,10 +26,12 @@ class CategoryController extends Controller
 
     public function showCategory(Request $request)
     {
+        // return Category::all();
         return view('dashboard.category', [
-            'categories' => Category::all()
+            'categories' => Category::all(),
         ]);
     }
+
     public function delete(Category $category)
     {
 

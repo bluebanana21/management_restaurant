@@ -14,7 +14,7 @@
             </a>
         </button>
     </div>
-    y
+    <br>
     <table class="table">
         <thead>
             <tr>
@@ -36,7 +36,7 @@
                             <i class="fa-solid fa-pencil"></i>
                         </a>
                         <form action="{{ route('dashboard.delete.Category') }}" class="d-inline">
-                            @method('delete')
+
                             @csrf
                             <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')">
                                 <i class="fa-solid fa-trash"></i>

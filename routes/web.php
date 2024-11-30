@@ -55,16 +55,10 @@ Route::get('/dashboard/order', function () {
 })->name('get.order')->middleware('auth');
 
 
-Route::get('/dashboard/category', function () {
-    return view('dashboard.category');
-})->name('get.category')->middleware('auth');
-
-
-Route::post('/dashboard/category/createCategory', [CategoryController::class, 'delete'])->name('dashboard.delete.Category')->middleware('auth');
+Route::get('dashboard/category', [CategoryController::class, 'showCategory'])->name('get.category');
 
 Route::get('/dashboard/category/createCategory', function () {
     return view('dashboard.create.createCategory');
 })->name('dashboard.show.addCategory')->middleware('auth');
-
 
 Route::post('/dashboard/category/createCategory', [CategoryController::class, 'storeCategory'])->name('dashboard.post.addCategory')->middleware('auth');

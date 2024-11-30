@@ -37,8 +37,7 @@
                                 <input type="text" class="visually-hidden" name="created_by" id="created_by"
                                     value="{{ Auth::User()->username }}">
 
-                                <input type="text" class="form-control" name="slug" id="slug"
-                                    value="{{ Auth::User()->username }}">
+
                             </div>
 
 
@@ -59,7 +58,6 @@
     // const slug = document.querySelector('#slug');
 
     // category_name.addEventListener('')
-
 </script>
 
 </html>
