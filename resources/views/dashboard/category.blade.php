@@ -32,18 +32,18 @@
                     <td>{{ $category->category_name }}</td>
                     <td>{{ $category->created_by }}</td>
                     <td>
-                        <a href="" class="badge bg-info">
-                            <i class="fa-solid fa-pencil"></i>
+
+                        <a href="{{ url('/dashboard/category/edit/' . $category->id) }}" class="text-decoration-none">
+                            <button class="badge bg-info border-0 ">
+                                <i class="fa-solid fa-pencil"></i>
+                            </button>
                         </a>
 
-
-                        <a href="{{ url('/dashboard/category/delete/'.$category->id) }}">
-
+                        <a href="{{ url('/dashboard/category/delete/' . $category->id) }}" class="text-decoration-none">
                             <button class="badge bg-danger border-0">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </a>
-
 
                     </td>
                 </tr>

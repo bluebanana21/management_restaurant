@@ -41,5 +41,20 @@ class CategoryController extends Controller
 
     }
 
+    public function edit($id)
+    {
+        $categories = Category::find($id);
+        return view('dashboard.edit.editCategory', compact('categories'));
+    }
+
+    public function update(Request $request, $id)
+    {
+
+        $categories = Category::find($id);
+        $categories->category_name = $request->input('category_name');
+        $categories->update();
+        return to_route('get.category');
+    }
+
 
 }

@@ -15,19 +15,21 @@
 </head>
 
 <body>
+    <h1>Edit category</h1>
     <div class="container mt-5 pt-5">
         <div class="row">
             <div class="col-12 col-sm-7 col-md-6 m-auto">
                 <div class="card border-0 shadow">
                     <div class="card-body">
 
-                        <form action="{{ Route('dashboard.post.addCategory') }}" method="POST">
+                        <form action="{{ url('/dashboard/category/update/' . $categories->id) }}" method="POST">
                             @csrf
-
+                            @method('PUT')
                             <div class="mb-3">
 
                                 <label for="inputCategoryName" class="form-label">Category name</label>
-                                <input type="text" class="form-control" name="category_name" id="category_name">
+                                <input type="text" class="form-control" name="category_name" id="category_name"
+                                    value="{{ $categories->category_name }}">
 
                                 @error('category_name')
                                     <span class="text-danger">Fill in category</span>
@@ -38,8 +40,6 @@
 
 
                             </div>
-
-
 
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
