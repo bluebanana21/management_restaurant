@@ -69,6 +69,7 @@
 
                         <img src="{{ asset('assets/images/test-burger.jpg') }}" class="card-img-top" alt="...">
                         <div class="card-body" id="no-decor-text">
+                            <h1>header</h1>
                             <p class="card-text">Some quick example text to build on the card title and
                                 make up the bulk of
                                 the

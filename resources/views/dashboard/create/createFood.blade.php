@@ -20,11 +20,11 @@
             <div class="col-12 col-sm-7 col-md-6 m-auto">
                 <div class="card border-0 shadow">
                     <div class="card-body">
-                        <form action="{{ Route('post.dashboard') }}" method="POST">
+                        <form action="{{ Route('post.dashboard') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="inputName" class="form-label">Name</label>
-                                <input type="text" class="form-control" name="nama makanan" id="inputName">
+                                <input type="text" class="form-control" name="name" id="inputName">
 
                             </div>
                             <div class="mb-3">
@@ -34,11 +34,13 @@
 
                             <div class="mb-3">
                                 <label for="inputId" class="form-label">Category</label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option value="1" selected>Appetizers</option>
-                                    <option value="2">Main course</option>
-                                    <option value="3">Drinks</option>
-                                    <option value="4">Desserts</option>
+                                <select class="form-select" aria-label="Default select example" name="category_name">
+
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->category_name }}">{{ $category->category_name }}
+                                        </option>
+                                    @endforeach
+
                                 </select>
                             </div>
 

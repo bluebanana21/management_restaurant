@@ -10,6 +10,7 @@ class Menu extends Model
         'name',
         'price',
         'description',
-        'category_id',
+        'category_name',
+        'imageFile',
     ];
 }

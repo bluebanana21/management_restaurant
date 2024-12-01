@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FoodController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MenuController;
 use Illuminate\Support\Facades\Route;
@@ -38,14 +39,14 @@ Route::get('/dashboard', function () {
     return view('dashboard.dashboard');
 })->middleware('auth');
 
+Route::get('/dashboard/menu', [MenuController::class, 'showMenu'])->name('get.menu')->middleware('auth');
 
-Route::get('/dashboard/menu', function () {
-    return view('dashboard.menus');
-})->name('get.menu')->middleware('auth');
+Route::get(
+    '/dashboard/menu/addFood',
+    [MenuController::class, 'showCreate']
+)->name('dashboard.addFood')->middleware('auth');
 
-Route::get('/dashboard/menu/addFood', function () {
-    return view('dashboard.create.createFood');
-})->name('dashboard.addFood')->middleware('auth');
+Route::get('/dashboard/menu/delete/{id}', [MenuController::class, 'deleteMenu']);
 
 Route::post('/dashboard/menu/addFood', [MenuController::class, 'storeMenu'])->name('post.dashboard')->middleware('auth');
 
