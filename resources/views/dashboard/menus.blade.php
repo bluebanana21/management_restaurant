@@ -36,7 +36,7 @@
                                 <i class="fa-solid fa-eye"></i>
                             </button>
                         </a>
-                        <a href="{{ route('get.foodDetails') }}">
+                        <a href="{{ url('/dashboard/menu/edit/' . $menu->id) }}">
                             <button class="badge bg-warning border-0">
                                 <i class="fa-solid fa-pencil"></i>
                             </button>

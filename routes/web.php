@@ -41,16 +41,19 @@ Route::get('/dashboard', function () {
 
 Route::get('/dashboard/menu', [MenuController::class, 'showMenu'])->name('get.menu')->middleware('auth');
 
+// ADD FOOD
 Route::get(
     '/dashboard/menu/addFood',
     [MenuController::class, 'showCreate']
 )->name('dashboard.addFood')->middleware('auth');
 
 Route::get('/dashboard/menu/delete/{id}', [MenuController::class, 'deleteMenu']);
+Route::get('/dashboard/menu/edit/{id}', [MenuController::class, 'editMenu']);
+Route::put('/dashboard/menu/update/{id}', [MenuController::class, 'updateMenu']);
 
 Route::post('/dashboard/menu/addFood', [MenuController::class, 'storeMenu'])->name('post.dashboard')->middleware('auth');
 
-
+// ADD Order
 Route::get('/dashboard/order', function () {
     return view('dashboard.orders');
 })->name('get.order')->middleware('auth');
